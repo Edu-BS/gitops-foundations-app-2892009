@@ -11,9 +11,9 @@ jobs:
       - checkout
       - run: ./mvnw -Dmaven.test.skip=true clean package
       - persist_to_workspace:
-         root: ./
-         paths:
-           - target/
+          root: ./
+          paths:
+            - target/
       - setup_remote_docker:
           version: 19.03.13
 
@@ -27,4 +27,4 @@ workflows:
   main:
     jobs:
       - build:
-          context: DockerHub
+          context: Docker
